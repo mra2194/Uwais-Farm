@@ -1,885 +1,865 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uwais Farm - Pusat Domba Aqiqah & Qurban Berkualitas</title>
-    
-    <!-- Favicon Icon -->
-    <link rel="icon" type="image/png" href="icon.png">
-    <link rel="apple-touch-icon" href="icon.png">
+<!-- Favicon Icon -->
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="shortcut icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
 
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Google Fonts & Font Awesome CDN Resmi -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-        :root {
-            --primary: #15803d;
-            --primary-hover: #166534;
-            --secondary: #f59e0b;
-            --dark: #0f172a;
-            --gray: #64748b;
-            --light: #f8fafc;
-            --white: #ffffff;
-            --border: #e2e8f0;
+<style>
+    :root {
+        --primary: #15803d;
+        --primary-hover: #166534;
+        --secondary: #f59e0b;
+        --dark: #0f172a;
+        --gray: #64748b;
+        --light: #f8fafc;
+        --white: #ffffff;
+        --border: #e2e8f0;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    /* Header & Nav */
+    header {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .navbar {
+        max-width: 1240px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.65rem 1.5rem;
+        min-height: 76px;
+    }
+
+    /* LOGO DIPERBESAR DAN JELAS */
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-decoration: none;
+        color: var(--primary);
+    }
+
+    .logo-img {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2.5px solid var(--primary);
+        box-shadow: 0 4px 12px rgba(21, 128, 61, 0.22);
+        transition: transform 0.25s ease;
+        flex-shrink: 0;
+    }
+
+    .logo:hover .logo-img {
+        transform: scale(1.05);
+    }
+
+    .logo-text h1 {
+        font-size: 1.45rem;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.4px;
+        color: var(--primary);
+    }
+
+    .logo-text span {
+        font-size: 0.78rem;
+        color: var(--gray);
+        font-weight: 600;
+        display: block;
+        margin-top: 1px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1.8rem;
+        list-style: none;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #334155;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: color 0.2s;
+        position: relative;
+        padding: 4px 0;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary);
+    }
+
+    .nav-links a:hover::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--primary);
+        border-radius: 2px;
+    }
+
+    .btn-wa-nav {
+        background-color: #25d366;
+        color: white;
+        padding: 0.65rem 1.35rem;
+        border-radius: 9999px;
+        text-decoration: none;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+        transition: 0.25s ease;
+        font-size: 0.92rem;
+    }
+
+    .btn-wa-nav:hover {
+        background-color: #1eb855;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+    }
+
+    /* Hamburger button for mobile */
+    .hamburger-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.6rem;
+        color: var(--dark);
+        cursor: pointer;
+        padding: 6px;
+    }
+
+    /* Mobile drawer */
+    .mobile-drawer {
+        position: fixed;
+        top: 0;
+        right: -290px;
+        width: 280px;
+        height: 100%;
+        background: white;
+        z-index: 1100;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+        transition: right 0.3s ease;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-drawer.open {
+        right: 0;
+    }
+
+    .drawer-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.4);
+        z-index: 1090;
+        display: none;
+    }
+
+    .drawer-overlay.open {
+        display: block;
+    }
+
+    .drawer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .drawer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .drawer-links a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 600;
+        font-size: 1rem;
+        display: block;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: background 0.2s;
+    }
+
+    .drawer-links a:hover {
+        background: #dcfce7;
+        color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+        position: relative;
+        background: linear-gradient(135deg, rgba(20, 83, 45, 0.88) 0%, rgba(22, 101, 52, 0.92) 100%), 
+                    url('banner.jpg') center/cover no-repeat;
+        color: white;
+        padding: 5.5rem 1.5rem;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 820px;
+        margin: auto;
+    }
+
+    .badge-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 7px 20px;
+        border-radius: 50px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        margin-bottom: 1.4rem;
+        backdrop-filter: blur(8px);
+    }
+
+    .hero h1 {
+        font-size: 2.85rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 1.2rem;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    }
+
+    .hero h1 span {
+        color: var(--secondary);
+    }
+
+    .hero p {
+        font-size: 1.15rem;
+        color: #f1f5f9;
+        margin-bottom: 2.2rem;
+        line-height: 1.7;
+        text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1.1rem;
+        flex-wrap: wrap;
+    }
+
+    .btn-hero-wa {
+        background: #25d366;
+        color: white;
+        padding: 0.9rem 1.9rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        transition: 0.25s;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+
+    .btn-hero-wa:hover {
+        background: #1eb855;
+        transform: translateY(-2px);
+    }
+
+    .btn-hero-catalog {
+        background: white;
+        color: var(--dark);
+        padding: 0.9rem 1.9rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.25s;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .btn-hero-catalog:hover {
+        background: #f1f5f9;
+        transform: translateY(-2px);
+    }
+
+    /* Features Bar */
+    .features-bar {
+        background: white;
+        border-bottom: 1px solid var(--border);
+        padding: 1.25rem 1.5rem;
+    }
+
+    .features-container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: #334155;
+    }
+
+    .feature-item i {
+        color: var(--primary);
+        font-size: 1.25rem;
+    }
+
+    /* Section Common */
+    .section {
+        padding: 4.5rem 1.5rem;
+        max-width: 1240px;
+        margin: auto;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 3.2rem;
+    }
+
+    .section-title h2 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -0.5px;
+    }
+
+    .section-title p {
+        color: var(--gray);
+        margin-top: 0.5rem;
+        font-size: 1.05rem;
+    }
+
+    /* Catalog Grid */
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .card {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.05);
+        transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 28px -6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-img-box {
+        position: relative;
+        height: 235px;
+        background: #e2e8f0;
+        overflow: hidden;
+    }
+
+    .card-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+    }
+
+    .card:hover .card-img-box img {
+        transform: scale(1.06);
+    }
+
+    .badge-status {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: #22c55e;
+        color: white;
+        font-size: 0.76rem;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+
+    .badge-status.limited {
+        background: #ea580c;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .card-body h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: #0f172a;
+    }
+
+    .card-specs {
+        display: flex;
+        gap: 16px;
+        font-size: 0.88rem;
+        color: var(--gray);
+        margin-bottom: 1.1rem;
+    }
+
+    .card-specs span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .card-specs i {
+        color: var(--primary);
+    }
+
+    .price-label {
+        font-size: 0.82rem;
+        color: var(--gray);
+    }
+
+    .price-value {
+        font-size: 1.45rem;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 1.2rem;
+    }
+
+    .btn-order {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        background: var(--primary);
+        color: white;
+        padding: 0.85rem;
+        border-radius: 9px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: 0.2s;
+    }
+
+    .btn-order:hover {
+        background: var(--primary-hover);
+    }
+
+    /* Why Us Section */
+    .why-us {
+        background: #f1f5f9;
+    }
+
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+
+    .why-card {
+        background: white;
+        padding: 2.2rem 1.6rem;
+        border-radius: 14px;
+        text-align: center;
+        border: 1px solid var(--border);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        transition: transform 0.2s;
+    }
+
+    .why-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .why-icon {
+        width: 58px;
+        height: 58px;
+        background: #dcfce7;
+        color: var(--primary);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.3rem;
+        font-size: 1.5rem;
+    }
+
+    .why-card h4 {
+        font-size: 1.15rem;
+        margin-bottom: 0.6rem;
+        color: #0f172a;
+    }
+
+    .why-card p {
+        font-size: 0.9rem;
+        color: var(--gray);
+        line-height: 1.6;
+    }
+
+    /* Steps / Cara Pesan */
+    .steps-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.2rem;
+        text-align: center;
+    }
+
+    .step-item {
+        background: white;
+        padding: 1.8rem 1.2rem;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    .step-num {
+        width: 40px;
+        height: 40px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1.05rem;
+        margin: 0 auto 1.1rem;
+        box-shadow: 0 2px 8px rgba(21, 128, 61, 0.3);
+    }
+
+    .step-item h4 {
+        font-size: 1.05rem;
+        margin-bottom: 0.45rem;
+        color: #0f172a;
+    }
+
+    .step-item p {
+        font-size: 0.88rem;
+        color: var(--gray);
+        line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+        background: #09121d;
+        color: #94a3b8;
+        padding: 4.5rem 1.5rem 1.8rem;
+    }
+
+    .footer-grid {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 2.8rem;
+        margin-bottom: 3rem;
+    }
+
+    .footer-col h3 {
+        color: white;
+        font-size: 1.18rem;
+        margin-bottom: 1.3rem;
+    }
+
+    .footer-col p {
+        font-size: 0.94rem;
+        line-height: 1.7;
+    }
+
+    .footer-col ul {
+        list-style: none;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.94rem;
+    }
+
+    .footer-col ul li i {
+        color: #22c55e;
+        width: 18px;
+    }
+
+    .footer-bottom {
+        max-width: 1200px;
+        margin: auto;
+        border-top: 1px solid #1e293b;
+        padding-top: 1.8rem;
+        text-align: center;
+        font-size: 0.88rem;
+    }
+
+    /* Floating WhatsApp Button */
+    .floating-wa {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: #25d366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
+        z-index: 1000;
+        text-decoration: none;
+        transition: transform 0.25s ease;
+    }
+
+    .floating-wa:hover {
+        transform: scale(1.1);
+    }
+
+    /* Responsif Layar */
+    @media (max-width: 1024px) {
+        .cards-grid {
+            grid-template-columns: repeat(2, 1fr);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
+        .why-grid {
+            grid-template-columns: repeat(2, 1fr);
         }
-
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
+        .steps-container {
+            grid-template-columns: repeat(3, 1fr);
         }
+    }
 
-        /* Header & Nav */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
+    @media (max-width: 768px) {
         .navbar {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.8rem 1.5rem;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 800;
-            font-size: 1.3rem;
-        }
-
-        .logo-img {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--primary);
-            box-shadow: 0 2px 8px rgba(21, 128, 61, 0.2);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.8rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #334155;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .btn-wa-nav {
-            background-color: #25d366;
-            color: white;
             padding: 0.6rem 1.2rem;
-            border-radius: 9999px;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
-            transition: 0.2s ease;
-            font-size: 0.9rem;
+            min-height: 68px;
         }
-
-        .btn-wa-nav:hover {
-            background-color: #1eb855;
-            transform: translateY(-2px);
+        .nav-links, .btn-wa-nav {
+            display: none;
         }
-
-        /* Hero Section */
+        .hamburger-btn {
+            display: block;
+        }
+        .logo-img {
+            width: 48px;
+            height: 48px;
+        }
+        .logo-text h1 {
+            font-size: 1.25rem;
+        }
+        .logo-text span {
+            font-size: 0.72rem;
+        }
         .hero {
-            position: relative;
-            background: linear-gradient(135deg, rgba(20, 83, 45, 0.9) 0%, rgba(22, 101, 52, 0.92) 100%), 
-                        url('banner.jpg') center/cover no-repeat;
-            color: white;
-            padding: 5.5rem 1.5rem;
-            text-align: center;
+            padding: 3.8rem 1.2rem;
         }
-
-        .hero-content {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .badge-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            padding: 6px 18px;
-            border-radius: 50px;
-            font-size: 0.88rem;
-            margin-bottom: 1.2rem;
-            backdrop-filter: blur(5px);
-        }
-
         .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.2rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-size: 2.1rem;
         }
-
-        .hero h1 span {
-            color: var(--secondary);
-        }
-
         .hero p {
-            font-size: 1.15rem;
-            color: #e2e8f0;
-            margin-bottom: 2rem;
-            text-shadow: 0 1px 5px rgba(0,0,0,0.3);
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-hero-wa {
-            background: #25d366;
-            color: white;
-            padding: 0.85rem 1.8rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.2s;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-        }
-
-        .btn-hero-wa:hover {
-            background: #1eb855;
-            transform: translateY(-2px);
-        }
-
-        .btn-hero-catalog {
-            background: white;
-            color: var(--dark);
-            padding: 0.85rem 1.8rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.2s;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-        }
-
-        .btn-hero-catalog:hover {
-            background: #f1f5f9;
-            transform: translateY(-2px);
-        }
-
-        /* Features Bar */
-        .features-bar {
-            background: white;
-            border-bottom: 1px solid var(--border);
-            padding: 1.2rem 1.5rem;
-        }
-
-        .features-container {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            font-size: 0.92rem;
-            color: #334155;
-        }
-
-        .feature-item i {
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        /* Section Common */
-        .section {
-            padding: 4.5rem 1.5rem;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #0f172a;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            margin-top: 0.5rem;
             font-size: 1rem;
         }
-
-        /* Catalog Grid - 6 Items (3 kolom di desktop, 2 di tablet, 1 di HP) */
+        .features-container {
+            flex-direction: column;
+            gap: 1rem;
+        }
         .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr;
+        }
+        .why-grid {
+            grid-template-columns: 1fr;
+        }
+        .steps-container {
+            grid-template-columns: 1fr;
+        }
+        .footer-grid {
+            grid-template-columns: 1fr;
             gap: 2rem;
         }
+    }
+</style>
 
-        .card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
 
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 14px 24px -4px rgba(0, 0, 0, 0.1);
-        }
+    <ul class="nav-links">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#katalog">Katalog Domba</a></li>
+        <li><a href="#keunggulan">Tentang Kami</a></li>
+        <li><a href="#cara-pesan">Pemesanan</a></li>
+    </ul>
 
-        .card-img-box {
-            position: relative;
-            height: 230px;
-            background: #e2e8f0;
-            overflow: hidden;
-        }
+    <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20tertarik%20dengan%20domba%20aqiqah/qurban" class="btn-wa-nav" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp fa-lg"></i> Chat WhatsApp
+    </a>
 
-        .card-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.4s ease;
-        }
+    <!-- Tombol Menu Mobile -->
+    <button class="hamburger-btn" onclick="toggleDrawer()" aria-label="Buka Menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</nav>
 
-        .card:hover .card-img-box img {
-            transform: scale(1.05);
-        }
 
-        .badge-status {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: #22c55e;
-            color: white;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-weight: 700;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-        }
-
-        .badge-status.limited {
-            background: #ea580c;
-        }
-
-        .card-body {
-            padding: 1.5rem;
-        }
-
-        .card-body h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #0f172a;
-        }
-
-        .card-specs {
-            display: flex;
-            gap: 14px;
-            font-size: 0.85rem;
-            color: var(--gray);
-            margin-bottom: 1rem;
-        }
-
-        .card-specs span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .card-specs i {
-            color: var(--primary);
-        }
-
-        .price-label {
-            font-size: 0.8rem;
-            color: var(--gray);
-        }
-
-        .price-value {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 1.2rem;
-        }
-
-        .btn-order {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            background: var(--primary);
-            color: white;
-            padding: 0.8rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: 0.2s;
-        }
-
-        .btn-order:hover {
-            background: var(--primary-hover);
-        }
-
-        /* Why Us Section */
-        .why-us {
-            background: #f1f5f9;
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
-        .why-card {
-            background: white;
-            padding: 2rem 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid var(--border);
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-            transition: transform 0.2s;
-        }
-
-        .why-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .why-icon {
-            width: 54px;
-            height: 54px;
-            background: #dcfce7;
-            color: var(--primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.2rem;
-            font-size: 1.4rem;
-        }
-
-        .why-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.6rem;
-            color: #0f172a;
-        }
-
-        .why-card p {
-            font-size: 0.88rem;
-            color: var(--gray);
-            line-height: 1.55;
-        }
-
-        /* Steps / Cara Pesan */
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 1.2rem;
-            text-align: center;
-        }
-
-        .step-item {
-            background: white;
-            padding: 1.8rem 1.2rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-        }
-
-        .step-num {
-            width: 38px;
-            height: 38px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1rem;
-            margin: 0 auto 1rem;
-            box-shadow: 0 2px 8px rgba(21, 128, 61, 0.3);
-        }
-
-        .step-item h4 {
-            font-size: 1rem;
-            margin-bottom: 0.4rem;
-            color: #0f172a;
-        }
-
-        .step-item p {
-            font-size: 0.85rem;
-            color: var(--gray);
-            line-height: 1.5;
-        }
-
-        /* Footer */
-        footer {
-            background: #09121d;
-            color: #94a3b8;
-            padding: 4rem 1.5rem 1.5rem;
-        }
-
-        .footer-grid {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-col h3 {
-            color: white;
-            font-size: 1.15rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .footer-col p {
-            font-size: 0.92rem;
-            line-height: 1.7;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.92rem;
-        }
-
-        .footer-col ul li i {
-            color: #22c55e;
-            width: 16px;
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: auto;
-            border-top: 1px solid #1e293b;
-            padding-top: 1.5rem;
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        /* Floating WhatsApp Button */
-        .floating-wa {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: #25d366;
-            color: white;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
-            z-index: 1000;
-            text-decoration: none;
-            transition: transform 0.2s;
-        }
-
-        .floating-wa:hover {
-            transform: scale(1.1);
-        }
-
-        /* Responsif Layar Tablet & HP */
-        @media (max-width: 1024px) {
-            .cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .why-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .steps-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 0.8rem 1rem;
-            }
-            .nav-links {
-                display: none;
-            }
-            .hero {
-                padding: 4rem 1.2rem;
-            }
-            .hero h1 {
-                font-size: 2.1rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .features-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-            .steps-container {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<!-- Header Navigation -->
-<header>
-    <nav class="navbar">
-        <a href="#" class="logo">
-            <img src="logo.jpg" alt="Logo Uwais Farm" class="logo-img" onerror="this.src='icon.png'">
-            <div>
-                <div>UWAIS FARM</div>
-                <div style="font-size: 0.72rem; color: var(--gray); font-weight: 500;">Pusat Domba Aqiqah & Qurban</div>
-            </div>
-        </a>
-        <ul class="nav-links">
-            <li><a href="#beranda">Beranda</a></li>
-            <li><a href="#katalog">Katalog Domba</a></li>
-            <li><a href="#keunggulan">Tentang Kami</a></li>
-            <li><a href="#cara-pesan">Pemesanan</a></li>
-        </ul>
-        <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20tertarik%20dengan%20domba%20aqiqah/qurban" class="btn-wa-nav" target="_blank" rel="noopener">
-            <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
-        </a>
-    </nav>
-</header>
-
-<!-- Hero Section -->
-<section class="hero" id="beranda">
-    <div class="hero-content">
-        <div class="badge-pill">
-            <i class="fa-solid fa-certificate"></i> Peternakan Terpercaya & Amanah
+<div class="cards-grid">
+    <!-- Item 1: img1.jpg -->
+    <div class="card">
+        <div class="card-img-box">
+            <img src="img1.jpg" alt="Domba Garut Super" loading="lazy">
+            <span class="badge-status">Stok Ready</span>
         </div>
-        <h1>Domba Sehat, <span>Berkualitas</span> & Sesuai Syariat</h1>
-        <p>Melayani pengadaan domba Aqiqah, Qurban, dan Bibit Ternak langsung dari kandang peternak dengan harga ramah kantong dan garansi kesehatan penuh.</p>
-        <div class="hero-buttons">
-            <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20mau%20tanya%20harga%20domba" class="btn-hero-wa" target="_blank" rel="noopener">
-                <i class="fa-brands fa-whatsapp"></i> Konsultasi via WhatsApp
+        <div class="card-body">
+            <h3>Domba Garut Super</h3>
+            <div class="card-specs">
+                <span><i class="fa-solid fa-weight-hanging"></i> 35 - 50 kg</span>
+                <span><i class="fa-solid fa-venus-mars"></i> Jantan Tanduk</span>
+            </div>
+            <div class="price-label">Mulai dari</div>
+            <div class="price-value">Rp 3.500.000</div>
+            <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20pesan%20Domba%20Garut%20Super" class="btn-order" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
             </a>
-            <a href="#katalog" class="btn-hero-catalog">Lihat Katalog Domba</a>
         </div>
     </div>
-</section>
 
-<!-- Feature Checklist Bar -->
-<div class="features-bar">
-    <div class="features-container">
-        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Domba Sehat & Terawat</div>
-        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Bobot Riil Sesuai Pesanan</div>
-        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Harga Langsung Peternak</div>
-        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Gratis Ongkir Area Tertentu</div>
-        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Bergaransi Penuh</div>
+    <!-- Item 2: img2.jpg -->
+    <div class="card">
+        <div class="card-img-box">
+            <img src="img2.jpg" alt="Domba Ekor Gemuk (Gibas)" loading="lazy">
+            <span class="badge-status">Stok Ready</span>
+        </div>
+        <div class="card-body">
+            <h3>Domba Ekor Gemuk</h3>
+            <div class="card-specs">
+                <span><i class="fa-solid fa-weight-hanging"></i> 25 - 35 kg</span>
+                <span><i class="fa-solid fa-venus-mars"></i> Jantan / Betina</span>
+            </div>
+            <div class="price-label">Mulai dari</div>
+            <div class="price-value">Rp 2.400.000</div>
+            <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20pesan%20Domba%20Ekor%20Gemuk" class="btn-order" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
+            </a>
+        </div>
+    </div>
+
+    <!-- Item 3: img3.jpg -->
+    <div class="card">
+        <div class="card-img-box">
+            <img src="img3.jpg" alt="Domba Texel Unggulan" loading="lazy">
+            <span class="badge-status">Stok Ready</span>
+        </div>
+        <div class="card-body">
+            <h3>Domba Texel Unggulan</h3>
+            <div class="card-specs">
+                <span><i class="fa-solid fa-weight-hanging"></i> 40 - 65 kg</span>
+                <span><i class="fa-solid fa-venus-mars"></i> Jantan Jumbo</span>
+            </div>
+            <div class="price-label">Mulai dari</div>
+            <div class="price-value">Rp 4.200.000</div>
+            <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20pesan%20Domba%20Texel%20Unggulan" class="btn-order" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
+            </a>
+        </div>
+    </div>
+
+    <!-- Item 4: img4.jpg -->
+    <div class="card">
+        <div class="card-img-box">
+            <img src="img4.jpg" alt="Domba Dorper Cross" loading="lazy">
+            <span class="badge-status">Stok Ready</span>
+        </div>
+        <div class="card-body">
+            <h3>Domba Dorper Cross</h3>
+            <div class="card-specs">
+                <span><i class="fa-solid fa-weight-hanging"></i> 35 - 55 kg</span>
+                <span><i class="fa-solid fa-venus-mars"></i> Jantan / Betina</span>
+            </div>
+            <div class="price-label">Mulai dari</div>
+            <div class="price-value">Rp 3.800.000</div>
+            <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20pesan%20Domba%20Dorper%20Cross" class="btn-order" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
+            </a>
+        </div>
+    </div>
+
+    <!-- Item 5: img5.jpg -->
+    <div class="card">
+        <div class="card-img-box">
+            <img src="img5.jpg" alt="Domba Garut Kelas A" loading="lazy">
+            <span class="badge-status limited">Stok Terbatas</span>
+        </div>
+        <div class="card-body">
+            <h3>Domba Garut Kelas A</h3>
+            <div class="card-specs">
+                <span><i class="fa-solid fa-weight-hanging"></i> 50 - 75 kg</span>
+                <span><i class="fa-solid fa-venus-mars"></i> Jantan Istimewa</span>
+            </div>
+            <div class="price-label">Mulai dari</div>
+            <div class="price-value">Rp 5.500.000</div>
+            <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20pesan%20Domba%20Garut%20Kelas%20A" class="btn-order" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
+            </a>
+        </div>
+    </div>
+
+    <!-- Item 6: img6.jpg -->
+    <div class="card">
+        <div class="card-img-box">
+            <img src="img6.jpg" alt="Domba Aqiqah Standar" loading="lazy">
+            <span class="badge-status">Stok Ready</span>
+        </div>
+        <div class="card-body">
+            <h3>Domba Aqiqah Standar</h3>
+            <div class="card-specs">
+                <span><i class="fa-solid fa-weight-hanging"></i> 20 - 28 kg</span>
+                <span><i class="fa-solid fa-venus-mars"></i> Betina Sehat</span>
+            </div>
+            <div class="price-label">Mulai dari</div>
+            <div class="price-value">Rp 1.950.000</div>
+            <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20pesan%20Domba%20Aqiqah%20Standar" class="btn-order" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
+            </a>
+        </div>
     </div>
 </div>
-
-<!-- Katalog Section (6 Domba) -->
-<section class="section" id="katalog">
-    <div class="section-title">
-        <h2>Pilihan Domba Terbaik</h2>
-        <p>Domba berkualitas siap potong untuk Aqiqah & Qurban, serta indukan dan bakalan ternak</p>
-    </div>
-
-    <div class="cards-grid">
-        <!-- Item 1: img1.jpg -->
-        <div class="card">
-            <div class="card-img-box">
-                <img src="img1.jpg" alt="Domba Garut Super" loading="lazy">
-                <span class="badge-status">Stok Ready</span>
-            </div>
-            <div class="card-body">
-                <h3>Domba Garut Super</h3>
-                <div class="card-specs">
-                    <span><i class="fa-solid fa-weight-hanging"></i> 35 - 50 kg</span>
-                    <span><i class="fa-solid fa-venus-mars"></i> Jantan Tanduk</span>
-                </div>
-                <div class="price-label">Mulai dari</div>
-                <div class="price-value">Rp 3.500.000</div>
-                <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20pesan%20Domba%20Garut%20Super" class="btn-order" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
-                </a>
-            </div>
-        </div>
-
-        <!-- Item 2: img2.jpg -->
-        <div class="card">
-            <div class="card-img-box">
-                <img src="img2.jpg" alt="Domba Ekor Gemuk (Gibas)" loading="lazy">
-                <span class="badge-status">Stok Ready</span>
-            </div>
-            <div class="card-body">
-                <h3>Domba Ekor Gemuk</h3>
-                <div class="card-specs">
-                    <span><i class="fa-solid fa-weight-hanging"></i> 25 - 35 kg</span>
-                    <span><i class="fa-solid fa-venus-mars"></i> Jantan / Betina</span>
-                </div>
-                <div class="price-label">Mulai dari</div>
-                <div class="price-value">Rp 2.400.000</div>
-                <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20pesan%20Domba%20Ekor%20Gemuk" class="btn-order" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
-                </a>
-            </div>
-        </div>
-
-        <!-- Item 3: img3.jpg -->
-        <div class="card">
-            <div class="card-img-box">
-                <img src="img3.jpg" alt="Domba Texel Unggulan" loading="lazy">
-                <span class="badge-status">Stok Ready</span>
-            </div>
-            <div class="card-body">
-                <h3>Domba Texel Unggulan</h3>
-                <div class="card-specs">
-                    <span><i class="fa-solid fa-weight-hanging"></i> 40 - 65 kg</span>
-                    <span><i class="fa-solid fa-venus-mars"></i> Jantan Jumbo</span>
-                </div>
-                <div class="price-label">Mulai dari</div>
-                <div class="price-value">Rp 4.200.000</div>
-                <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20pesan%20Domba%20Texel%20Unggulan" class="btn-order" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
-                </a>
-            </div>
-        </div>
-
-        <!-- Item 4: img4.jpg -->
-        <div class="card">
-            <div class="card-img-box">
-                <img src="img4.jpg" alt="Domba Dorper Cross" loading="lazy">
-                <span class="badge-status">Stok Ready</span>
-            </div>
-            <div class="card-body">
-                <h3>Domba Dorper Cross</h3>
-                <div class="card-specs">
-                    <span><i class="fa-solid fa-weight-hanging"></i> 35 - 55 kg</span>
-                    <span><i class="fa-solid fa-venus-mars"></i> Jantan / Betina</span>
-                </div>
-                <div class="price-label">Mulai dari</div>
-                <div class="price-value">Rp 3.800.000</div>
-                <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20pesan%20Domba%20Dorper%20Cross" class="btn-order" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
-                </a>
-            </div>
-        </div>
-
-        <!-- Item 5: img5.jpg -->
-        <div class="card">
-            <div class="card-img-box">
-                <img src="img5.jpg" alt="Domba Garut Kelas A" loading="lazy">
-                <span class="badge-status limited">Stok Terbatas</span>
-            </div>
-            <div class="card-body">
-                <h3>Domba Garut Kelas A</h3>
-                <div class="card-specs">
-                    <span><i class="fa-solid fa-weight-hanging"></i> 50 - 75 kg</span>
-                    <span><i class="fa-solid fa-venus-mars"></i> Jantan Istimewa</span>
-                </div>
-                <div class="price-label">Mulai dari</div>
-                <div class="price-value">Rp 5.500.000</div>
-                <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20pesan%20Domba%20Garut%20Kelas%20A" class="btn-order" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
-                </a>
-            </div>
-        </div>
-
-        <!-- Item 6: img6.jpg -->
-        <div class="card">
-            <div class="card-img-box">
-                <img src="img6.jpg" alt="Paket Domba Aqiqah Betina" loading="lazy">
-                <span class="badge-status">Stok Ready</span>
-            </div>
-            <div class="card-body">
-                <h3>Domba Aqiqah Standar</h3>
-                <div class="card-specs">
-                    <span><i class="fa-solid fa-weight-hanging"></i> 20 - 28 kg</span>
-                    <span><i class="fa-solid fa-venus-mars"></i> Betina Sehat</span>
-                </div>
-                <div class="price-label">Mulai dari</div>
-                <div class="price-value">Rp 1.950.000</div>
-                <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20pesan%20Domba%20Aqiqah%20Standar" class="btn-order" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Keunggulan Section -->
-<div class="why-us" id="keunggulan">
-    <section class="section">
-        <div class="section-title">
-            <h2>Mengapa Memilih Uwais Farm?</h2>
-            <p>Dedikasi kami untuk memberikan domba qurban dan aqiqah yang sehat, higienis, dan berkah</p>
-        </div>
-        <div class="why-grid">
-            <div class="why-card">
-                <div class="why-icon"><i class="fa-solid fa-house-chimney"></i></div>
-                <h4>Kandang Sendiri</h4>
-                <p>Domba dipelihara secara intensif dengan sanitasi kandang teratur serta pakan konsentrat dan hijauan bergizi tinggi.</p>
-            </div>
-            <div class="why-card">
-                <div class="why-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                <h4>Pengantaran Cepat</h4>
-                <p>Armada pengiriman siap mengantar domba langsung ke lokasi Anda dengan aman, tepat waktu, dan bergaransi.</p>
-            </div>
-            <div class="why-card">
-                <div class="why-icon"><i class="fa-solid fa-notes-medical"></i></div>
-                <h4>Bebas Cacat & Penyakit</h4>
-                <p>Semua domba telah dicek kesehatan, nafsu makan baik, fisik sempurna, dan cukup umur sesuai tuntunan syariat fiqih.</p>
-            </div>
-            <div class="why-card">
-                <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
-                <h4>Amanah & Transparan</h4>
-                <p>Tersedia layanan video call cek domba secara langsung, timbang ulang saat serah terima, dan pembayaran fleksibel.</p>
-            </div>
-        </div>
-    </section>
-</div>
-
-<!-- Cara Pesan Section -->
-<section class="section" id="cara-pesan">
-    <div class="section-title">
-        <h2>5 Langkah Mudah Memesan Domba</h2>
-        <p>Alur praktis, transparan, dan terpercaya</p>
-    </div>
-    <div class="steps-container">
-        <div class="step-item">
-            <div class="step-num">1</div>
-            <h4>Pilih Domba</h4>
-            <p>Pilih ras dan bobot domba yang sesuai kebutuhan Anda</p>
-        </div>
-        <div class="step-item">
-            <div class="step-num">2</div>
-            <h4>Hubungi WA</h4>
-            <p>Konsultasi stok via WhatsApp & tentukan jadwal pengiriman</p>
-        </div>
-        <div class="step-item">
-            <div class="step-num">3</div>
-            <h4>Kunci Pesanan</h4>
-            <p>Berikan DP tanda jadi agar domba pilihan tidak diambil pihak lain</p>
-        </div>
-        <div class="step-item">
-            <div class="step-num">4</div>
-            <h4>Pengiriman</h4>
-            <p>Domba diantar menggunakan armada khusus langsung ke alamat Anda</p>
-        </div>
-        <div class="step-item">
-            <div class="step-num">5</div>
-            <h4>Pelunasan</h4>
-            <p>Periksa kondisi fisik domba dan tuntaskan pelunasan</p>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <div class="footer-grid">
-        <div class="footer-col">
-            <h3>Tentang Uwais Farm</h3>
-            <p>Pusat penyedia domba qurban dan aqiqah terpercaya. Kami memegang teguh amanah, mutu pakan terjamin, serta kepuasan para shohibul qurban dan aqiqah di wilayah Jawa Barat dan sekitarnya.</p>
-        </div>
-        <div class="footer-col">
-            <h3>Kontak & Lokasi</h3>
-            <ul>
-                <li><i class="fa-solid fa-location-dot"></i> Jawa Barat, Indonesia</li>
-                <li><i class="fa-brands fa-whatsapp"></i> 0852-1337-5041</li>
-                <li><i class="fa-regular fa-clock"></i> Buka Setiap Hari: 08.00 - 17.00 WIB</li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h3>Layanan Kami</h3>
-            <ul>
-                <li><i class="fa-solid fa-check"></i> Domba Aqiqah (Hidup / Matang)</li>
-                <li><i class="fa-solid fa-check"></i> Domba Qurban Idul Adha</li>
-                <li><i class="fa-solid fa-check"></i> Bakalan & Bibit Penggemukan Domba</li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2026 Uwais Farm. All rights reserved.</p>
-    </div>
-</footer>
-
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20tanya%20stok%20domba" class="floating-wa" target="_blank" rel="noopener" title="Hubungi Kami di WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-</body>
-</html>
