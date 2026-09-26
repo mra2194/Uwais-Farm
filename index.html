@@ -1,21 +1,577 @@
+<!-- Google Fonts & Font Awesome Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+    :root {
+        --primary: #15803d;
+        --primary-dark: #166534;
+        --secondary: #f59e0b;
+        --dark: #0f172a;
+        --gray: #64748b;
+        --light-bg: #f8fafc;
+        --white: #ffffff;
+        --border: #e2e8f0;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+        --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--light-bg);
+        color: var(--dark);
+        line-height: 1.6;
+    }
+
+    /* Top Header Navbar */
+    header {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--primary);
+    }
+
+    .logo-icon {
+        background: #dcfce7;
+        color: var(--primary);
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+    }
+
+    .logo-text h1 {
+        font-size: 1.3rem;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.5px;
+        color: var(--dark);
+    }
+
+    .logo-text p {
+        font-size: 0.75rem;
+        color: var(--gray);
+        font-weight: 600;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #334155;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary);
+    }
+
+    .btn-wa-header {
+        background-color: #25d366;
+        color: white;
+        padding: 0.65rem 1.4rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.92rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-wa-header:hover {
+        background-color: #1eb855;
+        transform: translateY(-2px);
+    }
+
+    /* Hero Banner */
+    .hero {
+        background: linear-gradient(135deg, #064e3b 0%, #15803d 100%);
+        color: white;
+        padding: 5.5rem 1.5rem;
+        text-align: center;
+        position: relative;
+    }
+
+    .hero-inner {
+        max-width: 820px;
+        margin: auto;
+    }
+
+    .badge-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        padding: 6px 18px;
+        border-radius: 50px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        margin-bottom: 1.4rem;
+    }
+
+    .hero h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 1.2rem;
+        letter-spacing: -1px;
+    }
+
+    .hero h2 span {
+        color: #facc15;
+    }
+
+    .hero p {
+        font-size: 1.18rem;
+        color: #e2e8f0;
+        margin-bottom: 2.2rem;
+        line-height: 1.7;
+    }
+
+    .hero-actions {
+        display: flex;
+        justify-content: center;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+    }
+
+    .btn-hero-wa {
+        background: #25d366;
+        color: white;
+        padding: 0.9rem 2rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1rem;
+        transition: all 0.2s;
+    }
+
+    .btn-hero-wa:hover {
+        background: #1eb855;
+        transform: translateY(-2px);
+    }
+
+    .btn-hero-catalog {
+        background: white;
+        color: var(--dark);
+        padding: 0.9rem 2rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        transition: all 0.2s;
+    }
+
+    .btn-hero-catalog:hover {
+        background: #f1f5f9;
+    }
+
+    /* Value Proposition Strip */
+    .features-strip {
+        background: white;
+        border-bottom: 1px solid var(--border);
+        padding: 1.4rem 1.5rem;
+    }
+
+    .features-strip-inner {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #334155;
+    }
+
+    .feature-item i {
+        color: var(--primary);
+        font-size: 1.2rem;
+    }
+
+    /* Section Layouts */
+    .section {
+        padding: 5rem 1.5rem;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 3.5rem;
+    }
+
+    .section-header h3 {
+        font-size: 2.3rem;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        color: #0f172a;
+    }
+
+    .section-header p {
+        color: var(--gray);
+        margin-top: 0.6rem;
+        font-size: 1.05rem;
+    }
+
+    /* Catalog Grid Cards */
+    .grid-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2rem;
+    }
+
+    .product-card {
+        background: white;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-hover);
+    }
+
+    .product-image-wrap {
+        position: relative;
+        height: 230px;
+        background: #e2e8f0;
+        overflow: hidden;
+    }
+
+    .product-image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-image-wrap img {
+        transform: scale(1.05);
+    }
+
+    .badge-ready {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background: #22c55e;
+        color: white;
+        font-size: 0.78rem;
+        padding: 5px 12px;
+        border-radius: 30px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+    }
+
+    .product-info {
+        padding: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .product-info h4 {
+        font-size: 1.35rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 0.5rem;
+    }
+
+    .product-meta {
+        display: flex;
+        gap: 16px;
+        font-size: 0.9rem;
+        color: var(--gray);
+        margin-bottom: 1.2rem;
+    }
+
+    .product-meta span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .price-wrapper {
+        margin-top: auto;
+        margin-bottom: 1.4rem;
+    }
+
+    .price-caption {
+        font-size: 0.8rem;
+        color: var(--gray);
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .price-amount {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--primary);
+    }
+
+    .btn-order-wa {
+        display: block;
+        text-align: center;
+        background: var(--primary);
+        color: white;
+        padding: 0.85rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: background-color 0.2s;
+    }
+
+    .btn-order-wa:hover {
+        background: var(--primary-dark);
+    }
+
+    /* Why Us Section */
+    .why-wrapper {
+        background: #f1f5f9;
+    }
+
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1.8rem;
+    }
+
+    .why-item {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        text-align: center;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+    }
+
+    .why-icon-box {
+        width: 58px;
+        height: 58px;
+        background: #dcfce7;
+        color: var(--primary);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.2rem;
+        font-size: 1.5rem;
+    }
+
+    .why-item h5 {
+        font-size: 1.15rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        color: var(--dark);
+    }
+
+    .why-item p {
+        font-size: 0.92rem;
+        color: var(--gray);
+        line-height: 1.6;
+    }
+
+    /* Steps Section */
+    .steps-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .step-card {
+        background: white;
+        padding: 1.8rem 1.2rem;
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+    }
+
+    .step-circle {
+        width: 38px;
+        height: 38px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        margin: 0 auto 1rem;
+        font-size: 1rem;
+    }
+
+    .step-card h5 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+    }
+
+    .step-card p {
+        font-size: 0.88rem;
+        color: var(--gray);
+    }
+
+    /* Footer */
+    footer {
+        background: #09121d;
+        color: #94a3b8;
+        padding: 4.5rem 1.5rem 1.8rem;
+    }
+
+    .footer-columns {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .footer-col h5 {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+    }
+
+    .footer-col p {
+        font-size: 0.92rem;
+        line-height: 1.7;
+    }
+
+    .footer-col ul {
+        list-style: none;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.92rem;
+    }
+
+    .footer-bottom {
+        max-width: 1200px;
+        margin: auto;
+        border-top: 1px solid #1e293b;
+        padding-top: 1.8rem;
+        text-align: center;
+        font-size: 0.88rem;
+    }
+
+    /* Floating WhatsApp Button */
+    .wa-floating-btn {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: #25d366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
+        z-index: 1000;
+        text-decoration: none;
+        transition: transform 0.2s ease;
+    }
+
+    .wa-floating-btn:hover {
+        transform: scale(1.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+        }
+        .hero h2 {
+            font-size: 2.1rem;
+        }
+    }
+</style>
+
+
 <!-- Header Navigation -->
-<link rel="stylesheet" href="style.css">
 <header>
     <nav class="navbar">
         <a href="#" class="logo">
-            <div class="logo-icon"><i class="fa-solid fa-cow"></i></div>
-            <div>
-                <div>UWAIS FARM</div>
-                <div style="font-size: 0.7rem; color: var(--gray); font-weight: 500;">Aqiqah & Peternakan</div>
+            <div class="logo-icon"><i class="fa-solid fa-sheep"></i></div>
+            <div class="logo-text">
+                <h1>UWAIS FARM</h1>
+                <p>Peternakan & Aqiqah Domba</p>
             </div>
         </a>
         <ul class="nav-links">
             <li><a href="#beranda">Beranda</a></li>
-            <li><a href="#katalog">Katalog</a></li>
-            <li><a href="#keunggulan">Tentang</a></li>
-            <li><a href="#cara-pesan">Pemesanan</a></li>
+            <li><a href="#katalog">Katalog Domba</a></li>
+            <li><a href="#keunggulan">Tentang Kami</a></li>
+            <li><a href="#pemesanan">Cara Pesan</a></li>
         </ul>
-        <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20tertarik%20dengan%20kambing%20aqiqah/qurban" class="btn-wa-nav" target="_blank" rel="noopener">
+        <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20tertarik%20dengan%20domba%20aqiqah/qurban" class="btn-wa-header" target="_blank" rel="noopener">
             <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
         </a>
     </nav>
@@ -23,26 +579,26 @@
 
 <!-- Hero Section -->
 <section class="hero" id="beranda">
-    <div class="hero-content">
+    <div class="hero-inner">
         <div class="badge-pill">
             <i class="fa-solid fa-certificate"></i> Peternakan Terpercaya & Amanah
         </div>
-        <h1>Kambing Sehat, <span>Berkualitas</span> & Sesuai Syariat</h1>
-        <p>Melayani pengadaan kambing Aqiqah, Qurban, dan Ternak langsung dari peternak terpercaya dengan harga ramah kantong dan garansi kesehatan.</p>
-        <div class="hero-buttons">
-            <a href="https://wa.me/6285213375041" class="btn-hero-wa" target="_blank" rel="noopener">
+        <h2>Domba Sehat, <span>Berkualitas</span> & Sesuai Syariat</h2>
+        <p>Melayani pengadaan domba Aqiqah, Qurban, dan Bakalan Ternak langsung dari kandang peternak dengan bobot riil, harga bersaing, dan garansi kesehatan.</p>
+        <div class="hero-actions">
+            <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20konsultasi%20domba" class="btn-hero-wa" target="_blank" rel="noopener">
                 <i class="fa-brands fa-whatsapp"></i> Konsultasi via WhatsApp
             </a>
-            <a href="#katalog" class="btn-hero-catalog">Lihat Katalog</a>
+            <a href="#katalog" class="btn-hero-catalog">Lihat Katalog Domba</a>
         </div>
     </div>
 </section>
 
-<!-- Feature Checklist Bar -->
-<div class="features-bar">
-    <div class="features-container">
-        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Kambing Sehat & Terawat</div>
-        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Bobot Riil Sesuai Pesanan</div>
+<!-- Feature Checklist Strip -->
+<div class="features-strip">
+    <div class="features-strip-inner">
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Domba Sehat & Terawat</div>
+        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Bobot Riil Ditimbang</div>
         <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Harga Langsung Peternak</div>
         <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Gratis Ongkir Area Tertentu</div>
         <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Bergaransi Penuh</div>
@@ -51,162 +607,170 @@
 
 <!-- Katalog Section -->
 <section class="section" id="katalog">
-    <div class="section-title">
-        <h2>Pilihan Hewan Ternak & Aqiqah</h2>
-        <p>Kambing dan domba pilihan kualitas terbaik siap potong atau siap pelihara</p>
+    <div class="section-header">
+        <h3>Pilihan Hewan Domba Berkualitas</h3>
+        <p>Pilihan domba terbaik siap potong aqiqah, qurban, atau untuk dibudidayakan</p>
     </div>
 
-    <div class="cards-grid">
-        <!-- Item 1 -->
-        <div class="card">
-            <div class="card-img-box">
-                <img src="img1.jpg" alt="Kambing Jawa" onerror="this.src='https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=600&q=80'">
-                <span class="badge-status">Stok Ready</span>
+    <div class="grid-cards">
+        <!-- Domba 1 -->
+        <div class="product-card">
+            <div class="product-image-wrap">
+                <img src="img1.jpg" alt="Domba Garut Super">
+                <span class="badge-ready">Stok Ready</span>
             </div>
-            <div class="card-body">
-                <h3>Kambing Jawa</h3>
-                <div class="card-specs">
-                    <span><i class="fa-solid fa-weight-hanging"></i> 25 - 35 kg</span>
-                    <span><i class="fa-solid fa-venus-mars"></i> Jantan/Betina</span>
-                </div>
-                <div class="price-label">Mulai dari</div>
-                <div class="price-value">Rp 2.300.000</div>
-                <a href="https://wa.me/6285213375041?text=Halo,%20saya%20ingin%20pesan%20Kambing%20Jawa" class="btn-order" target="_blank" rel="noopener">Pesan Sekarang</a>
-            </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="card">
-            <div class="card-img-box">
-                <img src="img2.jpg" alt="Kambing Etawa" onerror="this.src='https://images.unsplash.com/photo-1563281577-a7be47e20db9?auto=format&fit=crop&w=600&q=80'">
-                <span class="badge-status">Stok Ready</span>
-            </div>
-            <div class="card-body">
-                <h3>Kambing Etawa</h3>
-                <div class="card-specs">
-                    <span><i class="fa-solid fa-weight-hanging"></i> 35 - 50 kg</span>
-                    <span><i class="fa-solid fa-venus-mars"></i> Jantan/Betina</span>
-                </div>
-                <div class="price-label">Mulai dari</div>
-                <div class="price-value">Rp 3.800.000</div>
-                <a href="https://wa.me/6285213375041?text=Halo,%20saya%20ingin%20pesan%20Kambing%20Etawa" class="btn-order" target="_blank" rel="noopener">Pesan Sekarang</a>
-            </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="card">
-            <div class="card-img-box">
-                <img src="img3.jpg" alt="Kambing Boer" onerror="this.src='https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=600&q=80'">
-                <span class="badge-status">Stok Ready</span>
-            </div>
-            <div class="card-body">
-                <h3>Kambing Boer</h3>
-                <div class="card-specs">
-                    <span><i class="fa-solid fa-weight-hanging"></i> 40 - 70 kg</span>
-                    <span><i class="fa-solid fa-venus-mars"></i> Jantan/Betina</span>
-                </div>
-                <div class="price-label">Mulai dari</div>
-                <div class="price-value">Rp 5.500.000</div>
-                <a href="https://wa.me/6285213375041?text=Halo,%20saya%20ingin%20pesan%20Kambing%20Boer" class="btn-order" target="_blank" rel="noopener">Pesan Sekarang</a>
-            </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="card">
-            <div class="card-img-box">
-                <img src="img4.jpg" alt="Domba Gibas" onerror="this.src='https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?auto=format&fit=crop&w=600&q=80'">
-                <span class="badge-status">Stok Ready</span>
-            </div>
-            <div class="card-body">
-                <h3>Domba Gibas</h3>
-                <div class="card-specs">
+            <div class="product-info">
+                <h4>Domba Garut Super</h4>
+                <div class="product-meta">
                     <span><i class="fa-solid fa-weight-hanging"></i> 30 - 45 kg</span>
+                    <span><i class="fa-solid fa-venus-mars"></i> Jantan</span>
+                </div>
+                <div class="price-wrapper">
+                    <div class="price-caption">Mulai dari</div>
+                    <div class="price-amount">Rp 2.900.000</div>
+                </div>
+                <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20tertarik%20dengan%20Domba%20Garut%20Super" class="btn-order-wa" target="_blank" rel="noopener">Pesan Sekarang</a>
+            </div>
+        </div>
+
+        <!-- Domba 2 -->
+        <div class="product-card">
+            <div class="product-image-wrap">
+                <img src="img2.jpg" alt="Domba Gibas / Ekor Gemuk">
+                <span class="badge-ready">Stok Ready</span>
+            </div>
+            <div class="product-info">
+                <h4>Domba Gibas Gemuk</h4>
+                <div class="product-meta">
+                    <span><i class="fa-solid fa-weight-hanging"></i> 25 - 38 kg</span>
                     <span><i class="fa-solid fa-venus-mars"></i> Jantan/Betina</span>
                 </div>
-                <div class="price-label">Mulai dari</div>
-                <div class="price-value">Rp 2.800.000</div>
-                <a href="https://wa.me/6285213375041?text=Halo,%20saya%20ingin%20pesan%20Domba%20Gibas" class="btn-order" target="_blank" rel="noopener">Pesan Sekarang</a>
+                <div class="price-wrapper">
+                    <div class="price-caption">Mulai dari</div>
+                    <div class="price-amount">Rp 2.300.000</div>
+                </div>
+                <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20tertarik%20dengan%20Domba%20Gibas%20Gemuk" class="btn-order-wa" target="_blank" rel="noopener">Pesan Sekarang</a>
+            </div>
+        </div>
+
+        <!-- Domba 3 -->
+        <div class="product-card">
+            <div class="product-image-wrap">
+                <img src="img3.jpg" alt="Domba Texel Premium">
+                <span class="badge-ready">Stok Ready</span>
+            </div>
+            <div class="product-info">
+                <h4>Domba Texel Premium</h4>
+                <div class="product-meta">
+                    <span><i class="fa-solid fa-weight-hanging"></i> 40 - 65 kg</span>
+                    <span><i class="fa-solid fa-venus-mars"></i> Jantan</span>
+                </div>
+                <div class="price-wrapper">
+                    <div class="price-caption">Mulai dari</div>
+                    <div class="price-amount">Rp 3.800.000</div>
+                </div>
+                <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20tertarik%20dengan%20Domba%20Texel%20Premium" class="btn-order-wa" target="_blank" rel="noopener">Pesan Sekarang</a>
+            </div>
+        </div>
+
+        <!-- Domba 4 -->
+        <div class="product-card">
+            <div class="product-image-wrap">
+                <img src="img4.jpg" alt="Domba Batur / Merino">
+                <span class="badge-ready">Stok Ready</span>
+            </div>
+            <div class="product-info">
+                <h4>Domba Merino / Batur</h4>
+                <div class="product-meta">
+                    <span><i class="fa-solid fa-weight-hanging"></i> 45 - 75 kg</span>
+                    <span><i class="fa-solid fa-venus-mars"></i> Jantan/Betina</span>
+                </div>
+                <div class="price-wrapper">
+                    <div class="price-caption">Mulai dari</div>
+                    <div class="price-amount">Rp 4.500.000</div>
+                </div>
+                <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20tertarik%20dengan%20Domba%20Merino" class="btn-order-wa" target="_blank" rel="noopener">Pesan Sekarang</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Keunggulan Section -->
-<div class="why-us" id="keunggulan">
+<!-- Why Us Section -->
+<div class="why-wrapper" id="keunggulan">
     <section class="section">
-        <div class="section-title">
-            <h2>Mengapa Memilih Uwais Farm?</h2>
-            <p>Dedikasi kami untuk memberikan hewan qurban dan aqiqah yang memuaskan dan berkah</p>
+        <div class="section-header">
+            <h3>Mengapa Memilih Domba Uwais Farm?</h3>
+            <p>Dedikasi kami untuk memberikan hewan qurban dan aqiqah yang sehat, sesuai syariat, dan amanah</p>
         </div>
         <div class="why-grid">
-            <div class="why-card">
-                <div class="why-icon"><i class="fa-solid fa-house-chimney"></i></div>
-                <h4>Kandang Sendiri</h4>
-                <p>Dipelihara intensif dengan kebersihan kandang terjamin dan pakan hijauan bernutrisi.</p>
+            <div class="why-item">
+                <div class="why-icon-box"><i class="fa-solid fa-house-chimney"></i></div>
+                <h5>Kandang Sendiri</h5>
+                <p>Dipelihara intensif dengan kebersihan kandang terjaga dan pakan bernutrisi tinggi.</p>
             </div>
-            <div class="why-card">
-                <div class="why-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                <h4>Pengiriman Aman</h4>
-                <p>Armada pengiriman siap mengantar hewan tepat waktu ke depan pintu rumah Anda.</p>
+            <div class="why-item">
+                <div class="why-icon-box"><i class="fa-solid fa-truck-fast"></i></div>
+                <h5>Pengantaran Tepat Waktu</h5>
+                <p>Armada pengiriman siap mengantar domba langsung ke depan rumah pemesan.</p>
             </div>
-            <div class="why-card">
-                <div class="why-icon"><i class="fa-solid fa-notes-medical"></i></div>
-                <h4>Jaminan Sehat</h4>
-                <p>Bebas dari cacat, cukup umur sesuai syariat, dan dipantau berkala.</p>
+            <div class="why-item">
+                <div class="why-icon-box"><i class="fa-solid fa-notes-medical"></i></div>
+                <h5>Jaminan Sehat</h5>
+                <p>Bebas cacat fisik, cukup umur sesuai syariat agama, dan dipantau kesehatannya.</p>
             </div>
-            <div class="why-card">
-                <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
-                <h4>Transaksi Amanah</h4>
-                <p>Tersedia opsi pembayaran berkala (DP) dan pelunasan saat hewan tiba di lokasi.</p>
+            <div class="why-item">
+                <div class="why-icon-box"><i class="fa-solid fa-handshake"></i></div>
+                <h5>Transaksi Amanah</h5>
+                <p>Bisa booking dengan uang muka (DP) dan sisa pelunasan saat domba tiba di lokasi.</p>
             </div>
         </div>
     </section>
 </div>
 
-<!-- Cara Pesan Section -->
-<section class="section" id="cara-pesan">
-    <div class="section-title">
-        <h2>5 Langkah Mudah Memesan</h2>
-        <p>Alur praktis dan transparan dari awal hingga pengantaran</p>
+<!-- Steps Section -->
+<section class="section" id="pemesanan">
+    <div class="section-header">
+        <h3>5 Langkah Mudah Pemesanan</h3>
+        <p>Alur praktis dan transparan dari awal hingga domba tiba</p>
     </div>
-    <div class="steps-container">
-        <div class="step-item">
-            <div class="step-num">1</div>
-            <h4>Pilih Kambing</h4>
-            <p>Tentukan tipe dan bobot yang sesuai kebutuhan</p>
+    <div class="steps-wrapper">
+        <div class="step-card">
+            <div class="step-circle">1</div>
+            <h5>Pilih Domba</h5>
+            <p>Tentukan tipe dan bobot domba yang Anda butuhkan</p>
         </div>
-        <div class="step-item">
-            <div class="step-num">2</div>
-            <h4>Chat WhatsApp</h4>
-            <p>Konfirmasi ketersediaan stok & jadwal kirim</p>
+        <div class="step-card">
+            <div class="step-circle">2</div>
+            <h5>Chat WhatsApp</h5>
+            <p>Konfirmasi ketersediaan nomor dan tanggal kirim</p>
         </div>
-        <div class="step-item">
-            <div class="step-num">3</div>
-            <h4>Tanda Jadi (DP)</h4>
-            <p>Kunci pilihan kambing agar tidak terambil orang lain</p>
+        <div class="step-card">
+            <div class="step-circle">3</div>
+            <h5>Tanda Jadi (DP)</h5>
+            <p>Kunci pilihan domba agar tidak berpindah tangan</p>
         </div>
-        <div class="step-item">
-            <div class="step-num">4</div>
-            <h4>Pengantaran</h4>
-            <p>Hewan diantar langsung ke tujuan Anda</p>
+        <div class="step-card">
+            <div class="step-circle">4</div>
+            <h5>Pengantaran</h5>
+            <p>Domba diantar dengan aman langsung ke alamat Anda</p>
         </div>
-        <div class="step-item">
-            <div class="step-num">5</div>
-            <h4>Pelunasan</h4>
-            <p>Cek kondisi hewan lalu selesaikan pembayaran</p>
+        <div class="step-card">
+            <div class="step-circle">5</div>
+            <h5>Pelunasan</h5>
+            <p>Cek kondisi fisik domba dan tuntaskan pembayaran</p>
         </div>
     </div>
 </section>
 
 <!-- Footer -->
 <footer>
-    <div class="footer-grid">
+    <div class="footer-columns">
         <div class="footer-col">
-            <h3>Tentang Uwais Farm</h3>
-            <p>Penyedia hewan qurban dan aqiqah terpercaya dengan prinsip syar'i, amanah, dan mengutamakan kesehatan hewan serta kepuasan pembeli.</p>
+            <h5>Tentang Uwais Farm</h5>
+            <p>Penyedia domba qurban dan aqiqah terpercaya dengan prinsip syar'i, amanah, dan mengutamakan kesehatan hewan serta kepuasan para pelanggan.</p>
         </div>
         <div class="footer-col">
-            <h3>Kontak & Lokasi</h3>
+            <h5>Kontak & Lokasi</h5>
             <ul>
                 <li><i class="fa-solid fa-location-dot"></i> Jawa Barat, Indonesia</li>
                 <li><i class="fa-brands fa-whatsapp"></i> 0852-1337-5041</li>
@@ -214,11 +778,11 @@
             </ul>
         </div>
         <div class="footer-col">
-            <h3>Layanan Kami</h3>
+            <h5>Layanan Domba</h5>
             <ul>
-                <li><i class="fa-solid fa-check"></i> Kambing Aqiqah (Hidup / Siap Masak)</li>
-                <li><i class="fa-solid fa-check"></i> Hewan Qurban Idul Adha</li>
-                <li><i class="fa-solid fa-check"></i> Bibit Ternak & Penggemukan</li>
+                <li><i class="fa-solid fa-check"></i> Domba Aqiqah (Hidup / Siap Masak)</li>
+                <li><i class="fa-solid fa-check"></i> Domba Qurban Idul Adha</li>
+                <li><i class="fa-solid fa-check"></i> Bibit Domba & Penggemukan</li>
             </ul>
         </div>
     </div>
@@ -227,7 +791,4 @@
     </div>
 </footer>
 
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm,%20saya%20ingin%20tanya%20hewan%20ternak" class="floating-wa" target="_blank" rel="noopener" title="Hubungi Kami di WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
+<!--
