@@ -1,49 +1,27 @@
-Uwais Farm - Website Penjualan Kambing & Domba
+# Uwais Farm — Website Penjualan Domba Qurban & Aqiqah
 
-Website profil usaha dan katalog penjualan hewan ternak, qurban, dan aqiqah untuk Uwais Farm.
+Website statis (HTML + CSS) untuk katalog domba qurban dan aqiqah Uwais Farm. Pemesanan via WhatsApp.
 
-📁 Struktur File dalam Repositori
+## Struktur File
 
-Pastikan semua file diletakkan di folder utama (root) repositori GitHub:
+```
+index.html          # Halaman utama (SEO meta, JSON-LD, konten)
+style.css           # Styling
+robots.txt          # Aturan crawler + lokasi sitemap
+sitemap.xml         # Sitemap
+site.webmanifest    # Web app manifest
+images/             # Gambar teknis hasil optimasi (WebP + JPG, ikon, og-image)
+```
 
-mra2194/Uwais-Farm/
-├── index.html        # File HTML utama halaman web
-├── style.css         # File styling CSS utama
-├── README.md         # Dokumentasi repositori
-├── img1.jpg          # Foto Kambing Jawa
-├── img2.jpg          # Foto Kambing Etawa
-├── img3.jpg          # Foto Kambing Boer
-└── img4.jpg          # Foto Domba Gibas
+## SEO
 
+- Title, meta description, canonical, Open Graph, Twitter Card
+- JSON-LD: LocalBusiness, WebSite, ItemList/Product, FAQPage, BreadcrumbList
+- Satu `<h1>`, heading berurutan, landmark semantik, alt text deskriptif
+- `robots.txt` dan `sitemap.xml`
 
-Catatan Gambar: Jika file img1.jpg hingga img4.jpg belum Anda upload, kode index.html otomatis menampilkan gambar cadangan (fallback image) agar tampilan web tidak kosong atau rusak.
+Jika domain berubah, ganti `https://mra2194.github.io/Uwais-Farm/` di `index.html`, `robots.txt`, dan `sitemap.xml`.
 
-🚀 Cara Publish ke GitHub Pages
+## Publish ke GitHub Pages
 
-Buka repositori Uwais-Farm di GitHub.
-
-Klik Add file > Upload files.
-
-Masukkan file:
-
-index.html
-
-style.css
-
-README.md
-
-img1.jpg, img2.jpg, img3.jpg, img4.jpg
-
-Klik tombol hijau Commit changes.
-
-Buka tab Settings > menu Pages di sebelah kiri.
-
-Pada bagian Build and deployment > Branch:
-
-Pilih branch main
-
-Folder pilih / (root)
-
-Klik Save
-
-Tunggu sekitar 1-2 menit hingga link GitHub Pages Anda aktif.
+Settings > Pages > Branch `main`, folder `/ (root)` > Save.
