@@ -318,23 +318,47 @@
 
   <main>
     <section class="hero" id="beranda">
-      <div class="hero-content">
-        <span class="badge-pill"><i class="fa-solid fa-star" aria-hidden="true"></i> Melayani sejak 2018</span>
-        <h1>Jual Domba <span>Qurban &amp; Aqiqah</span> Sehat Berkualitas</h1>
-        <p>Pilihan domba Garut, Texel, Dorper dan Ekor Gemuk dari Uwais Farm. Berkah, terpercaya, dan mudah dipesan langsung lewat WhatsApp.</p>
-        <div class="hero-buttons">
-          <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm%2C%20saya%20tertarik%20dengan%20domba%20aqiqah/qurban" class="btn btn-wa" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Pesan via WhatsApp</a>
-          <a href="#katalog" class="btn btn-light">Lihat Katalog</a>
+      <div class="hero-inner">
+        <div class="hero-slides" aria-live="polite">
+          <div class="hero-slide active">
+            <span class="badge-pill"><i class="fa-solid fa-star" aria-hidden="true"></i> Melayani sejak 2018</span>
+            <h1>Jual Domba <span>Qurban &amp; Aqiqah</span> Sehat Berkualitas</h1>
+            <p>Pilihan domba Garut, Texel, Dorper dan Ekor Gemuk dari Uwais Farm. Berkah, terpercaya, langsung dari peternak.</p>
+          </div>
+          <div class="hero-slide">
+            <span class="badge-pill"><i class="fa-solid fa-baby" aria-hidden="true"></i> Paket Aqiqah</span>
+            <h2 class="h1like">Domba Aqiqah <span>Hemat &amp; Berkah</span> untuk Buah Hati</h2>
+            <p>Domba sehat bobot 20-35 kg, mulai Rp 1.950.000. Konsultasikan kebutuhan aqiqah Anda via WhatsApp.</p>
+          </div>
+          <div class="hero-slide">
+            <span class="badge-pill"><i class="fa-solid fa-moon" aria-hidden="true"></i> Persiapan Qurban</span>
+            <h2 class="h1like">Siap Domba <span>Qurban Premium</span> Terbaik</h2>
+            <p>Bobot hingga 75 kg, jantan tanduk dan jumbo. Pesan lebih awal agar bisa memilih yang terbaik.</p>
+          </div>
+          <div class="hero-buttons">
+            <a href="https://wa.me/6285213375041?text=Halo%20Uwais%20Farm%2C%20saya%20tertarik%20dengan%20domba%20aqiqah/qurban" class="btn btn-wa" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Pesan via WhatsApp</a>
+            <a href="#katalog" class="btn btn-ghost">Lihat Katalog <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+          </div>
+          <div class="hero-dots" role="tablist" aria-label="Slide hero">
+            <button class="active" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <picture class="hv hv-a"><source srcset="images/img1.webp" type="image/webp"><img src="images/img1.jpg" alt="" width="640" height="359" decoding="async" fetchpriority="high"></picture>
+          <picture class="hv hv-b"><source srcset="images/img3.webp" type="image/webp"><img src="images/img3.jpg" alt="" width="624" height="378" decoding="async"></picture>
+          <picture class="hv hv-c"><source srcset="images/img5.webp" type="image/webp"><img src="images/img5.jpg" alt="" width="399" height="501" decoding="async"></picture>
+          <img class="hv-logo" src="images/hero-logo.webp" alt="" width="220" height="220">
         </div>
       </div>
     </section>
 
     <div class="features-bar">
       <ul class="features-container">
-        <li class="feature-item"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Hewan Sehat</li>
-        <li class="feature-item"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Bobot Jelas</li>
-        <li class="feature-item"><i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i> Harga Transparan</li>
-        <li class="feature-item"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Pesan Mudah</li>
+        <li class="feature-item"><span class="fi"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></span> Domba sehat &amp; terawat</li>
+        <li class="feature-item"><span class="fi"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span> Bobot sesuai pesanan</li>
+        <li class="feature-item"><span class="fi"><i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i></span> Harga langsung peternak</li>
+        <li class="feature-item"><span class="fi"><i class="fa-solid fa-mosque" aria-hidden="true"></i></span> Sesuai syariat</li>
+        <li class="feature-item"><span class="fi"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span> Pesan mudah via WA</li>
       </ul>
     </div>
 
@@ -344,8 +368,18 @@
         <h2 id="katalog-title">Pilihan Domba Qurban &amp; Aqiqah</h2>
         <p>Pilih jenis dan bobot sesuai kebutuhan Anda, lalu pesan langsung lewat WhatsApp.</p>
       </div>
-      <div class="cards-grid">
-      <article class="card reveal">
+      <div class="filters" role="group" aria-label="Filter katalog">
+        <div class="chips" id="chips">
+          <button class="chip active" data-f="all">Semua</button>
+          <button class="chip" data-f="qurban"><i class="fa-solid fa-moon" aria-hidden="true"></i> Qurban</button>
+          <button class="chip" data-f="aqiqah"><i class="fa-solid fa-baby" aria-hidden="true"></i> Aqiqah</button>
+        </div>
+        <label class="sort"><span>Urutkan</span>
+          <select id="sort"><option value="def">Rekomendasi</option><option value="asc">Harga terendah</option><option value="desc">Harga tertinggi</option><option value="w">Bobot terbesar</option></select>
+        </label>
+      </div>
+      <div class="cards-grid" id="grid">
+      <article class="card reveal" data-cat="qurban" data-price="3500000" data-w="50">
         <div class="card-img-box">
           <picture>
             <source srcset="images/img1.webp" type="image/webp">
@@ -367,7 +401,7 @@
         </div>
       </article>
 
-      <article class="card reveal">
+      <article class="card reveal" data-cat="aqiqah qurban" data-price="2400000" data-w="35">
         <div class="card-img-box">
           <picture>
             <source srcset="images/img2.webp" type="image/webp">
@@ -389,7 +423,7 @@
         </div>
       </article>
 
-      <article class="card reveal">
+      <article class="card reveal" data-cat="qurban" data-price="4200000" data-w="65">
         <div class="card-img-box">
           <picture>
             <source srcset="images/img3.webp" type="image/webp">
@@ -411,7 +445,7 @@
         </div>
       </article>
 
-      <article class="card reveal">
+      <article class="card reveal" data-cat="qurban aqiqah" data-price="3800000" data-w="55">
         <div class="card-img-box">
           <picture>
             <source srcset="images/img4.webp" type="image/webp">
@@ -433,7 +467,7 @@
         </div>
       </article>
 
-      <article class="card reveal">
+      <article class="card reveal" data-cat="qurban" data-price="5500000" data-w="75">
         <div class="card-img-box">
           <picture>
             <source srcset="images/img5.webp" type="image/webp">
@@ -455,7 +489,7 @@
         </div>
       </article>
 
-      <article class="card reveal">
+      <article class="card reveal" data-cat="aqiqah" data-price="1950000" data-w="28">
         <div class="card-img-box">
           <picture>
             <source srcset="images/img6.webp" type="image/webp">
@@ -580,6 +614,30 @@
         }, { threshold: .12 });
         els.forEach(function (el) { io.observe(el); });
       } else { els.forEach(function (el) { el.classList.add('in'); }); }
+
+      var slides = document.querySelectorAll('.hero-slide'), dots = document.querySelectorAll('.hero-dots button'), cur = 0, timer;
+      function go(n) { slides[cur].classList.remove('active'); dots[cur].classList.remove('active'); cur = n; slides[cur].classList.add('active'); dots[cur].classList.add('active'); }
+      function auto() { clearInterval(timer); if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(function () { go((cur + 1) % slides.length); }, 5500); }
+      dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); auto(); }); });
+      auto();
+
+      var grid = document.getElementById('grid'), cards = Array.prototype.slice.call(grid.children), filt = 'all';
+      function render() {
+        var v = document.getElementById('sort').value;
+        var list = cards.slice().sort(function (a, b) {
+          if (v === 'asc') return a.dataset.price - b.dataset.price;
+          if (v === 'desc') return b.dataset.price - a.dataset.price;
+          if (v === 'w') return b.dataset.w - a.dataset.w;
+          return cards.indexOf(a) - cards.indexOf(b);
+        });
+        list.forEach(function (c) { grid.appendChild(c); c.hidden = !(filt === 'all' || c.dataset.cat.indexOf(filt) > -1); });
+      }
+      document.getElementById('chips').addEventListener('click', function (e) {
+        var b = e.target.closest('.chip'); if (!b) return;
+        document.querySelectorAll('.chip').forEach(function (c) { c.classList.toggle('active', c === b); });
+        filt = b.dataset.f; render();
+      });
+      document.getElementById('sort').addEventListener('change', render);
 
       var links = document.querySelectorAll('.nav-links a');
       var secs = Array.prototype.map.call(links, function (a) { return document.querySelector(a.getAttribute('href')); });
