@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mra2194.github.io/Uwais-Farm/sitemap.xml
